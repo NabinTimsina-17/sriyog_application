@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sriyog_application/core/app_colors.dart';
-import 'package:sriyog_application/widgets/professional_of_the_day.dart';
+import 'package:sriyog_application/widgets/change_city.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,54 +28,14 @@ class ChangeCountryState extends State<ChangeCountry> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(80),
-        child: Stack(
-          children: [
-            Container(
-              height: 60,
-            ),
-            AppBar(
-              backgroundColor: Colors.transparent,
-              elevation: 0,
-              leading: const Padding(
-                padding: EdgeInsets.all(8.0),
-                child: CircleAvatar(
-                  backgroundImage: AssetImage('assets/images/pracas.png'),
-                ),
-              ),
-              title: const Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  Text(
-                    'SRIYOG',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                        fontSize: 25,
-                        fontFamily: 'JDRProvince',
-                        color: Colors.black),
-                  ),
-                  Text('|Change Country', style: TextStyle(color: AppColors.primaryColor)),
-                ],
-              ),
-              actions: const [
-                Icon(Icons.location_on, color: Colors.black),
-                Padding(padding: EdgeInsets.only(right: 20))
-              ],
-            ),
-          ],
-        ),
-      ),
-
-      // Body content
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           const CircleAvatar(
-            radius: 80,
+            radius: 120,
             backgroundImage: AssetImage('assets/images/appbar_background.png'),
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 28),
           Column(
             children: [
               Row(
@@ -83,35 +43,34 @@ class ChangeCountryState extends State<ChangeCountry> {
                 children: [
                   Image.asset(
                     'assets/images/india_flag.png',
-                    width: 30,
-                    height: 20,
+                    width: 60,
+                    height: 60,
                   ),
-                  const SizedBox(width: 10),
-                  const Text('India'),
+                   const Text('India', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w400)),
                 ],
               ),
-              const SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Image.asset(
                     'assets/images/nepal_flag.png',
-                    width: 30,
-                    height: 20,
+                   width: 60,
+                    height: 60,
                   ),
-                  const SizedBox(width: 10),
-                  const Text('Nepal'),
+                   const Text('Nepal', style:  TextStyle(fontSize: 24, fontWeight: FontWeight.w400)),
                 ],
               ),
             ],
           ),
-          const SizedBox(height: 20),
+          const SizedBox(
+            height: 20,
+          ),
           ElevatedButton(
             onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => const ProfessionalOfTheDay()),
+                    builder: (context) => const ChangeCity()),
               );
             },
             style: ElevatedButton.styleFrom(
@@ -138,34 +97,7 @@ class ChangeCountryState extends State<ChangeCountry> {
         ],
       ),
 
-      bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.work),
-            label: 'Professions',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.add_circle, size: 40),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Search',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.contact_mail),
-            label: 'Contact',
-          ),
-        ],
-        selectedItemColor: Colors.black,
-        unselectedItemColor: Colors.grey,
-        showSelectedLabels: true,
-        showUnselectedLabels: true,
-      ),
+
     );
   }
 }

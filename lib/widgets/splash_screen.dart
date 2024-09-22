@@ -58,39 +58,12 @@ class SplashScreen extends StatelessWidget {
               width: 320,
             ),
             const Text('Proudly Made in the Cloud',         
-         style: TextStyle(fontSize: 18, fontWeight: FontWeight.w400),
+         style: TextStyle(fontSize: 25, fontWeight: FontWeight.w400),
 ),
           ],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.work),
-            label: 'Professions',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.add_circle, size: 40),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Search',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.contact_mail),
-            label: 'Contact',
-          ),
-        ],
-        selectedItemColor: Colors.black,
-        unselectedItemColor: Colors.grey,
-        showSelectedLabels: true,
-        showUnselectedLabels: true,
-      ),
+
     );
   }
 }
